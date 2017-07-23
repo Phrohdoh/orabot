@@ -629,6 +629,9 @@ class IRC_Server:
         matches = re.findall("resource#([0-9]*)", message)
         if ( matches != [] ):
             parse(channel, message, matches, 'https://api.github.com/repos/OpenRA/OpenRA-Resources/issues/', 'https://github.com/OpenRA/OpenRA-Resources/issues/', True)
+        matches = re.findall("sdk#([0-9]*)", message)
+        if ( matches != [] ):
+            parse(channel, message, matches, 'https://api.github.com/repos/OpenRA/OpenRAModSDK/issues/', 'https://github.com/OpenRA/OpenRAModSDK/issues/', True)
         matches = re.findall("map#([0-9]*)", message)
         if ( matches != [] ):
             parse_map(channel, message, matches)
